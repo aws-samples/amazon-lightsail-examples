@@ -1,11 +1,6 @@
-## My Project
+# amazon-lightsail-examples
 
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
+This repository contains example Docker images to be used on Lightsail Containers. Right now, it just has one hello-world example that runs a simple webserver.
 
 ## Security
 
