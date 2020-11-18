@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="@mrdaikon / Matt Rooney" />
+    <meta name="organization" content="Amazon - AWS / Lightsail" />
+    <title>Welcome to your first image!</title>
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, width=device-width, height=device-height"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/welcome.css" />
+  </head>
+  <body>
+    <div class="layout_page style_bodyMD">
+      <div class="layout_header">
+        <img src="assets/img/Wave.gif" class="img_background" />
+        <img src="assets/img/HeaderOverlay.svg" class="img_foreground" />
+      </div>
+      <div class="layout_content">
+        <div class="layout_section1">
+          <div class="style_headlineXL">Success!</div>
+
+          <div class="layout_paragraph style_bodyMD">
+            Congratulations! You just deployed the Amazon Lightsail example
+            container image.
+          </div>
+
+          <div class="layout_paragraph style_bodyMD">
+            The purpose of this image is to quickly deploy a container to your
+            Lightsail container service.
+          </div>
+
+          <div class="style_rule"></div>
+        </div>
+
+        <div class="layout_section2_head">
+          <div class="style_headlineMD">What now?</div>
+        </div>
+
+        <div class="layout_section2">
+          <div class="layout_column">
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                Learn about Lightsail container services
+              </div>
+              <div class="style_bodySM">
+                An Amazon Lightsail container service is a highly scalable
+                compute and networking resource on which you can deploy, run,
+                and manage containers. For more information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services"
+                  target="_blank"
+                  >Container services in Amazon Lightsail.
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">Install required software</div>
+              <div class="style_bodySM">
+                Install software on your local machine that you need to create
+                your own container images for your Lightsail container service.
+                For more information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-install-software"
+                >
+                  Installing the Amazon Lightsail container services plugin.
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                Create your own container images
+              </div>
+              <div class="style_bodySM">
+                Create a container image on your local machine using a
+                Dockerfile. After your image is created, you can push it to your
+                Lightsail container service to deploy it. For more information,
+                see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
+                  target="_blank"
+                  >Creating container images for your Amazon Lightsail container
+                  services.
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                Push container images to your container service
+              </div>
+              <div class="style_bodySM">
+                Push container images from your local machine to your Lightsail
+                container service so that you can launch them. For more
+                information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images"
+                  target="_blank"
+                  >Pushing and managing container images on your Amazon
+                  Lightsail container services.<svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                Create a deployment on your container service
+              </div>
+              <div class="style_bodySM">
+                Create a deployment to launch containers on your Lightsail
+                container service. You can use container images that you pushed
+                to your service, or use container images from a public
+                repository like DockerHub. For more information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services-deployments"
+                  target="_blank"
+                  >Creating and managing deployments for your Amazon Lightsail
+                  container services.<svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                View container logs from your deployment
+              </div>
+              <div class="style_bodySM">
+                Every container in your container service generates a log that
+                you can access to diagnose the operation of your containers. For
+                more information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-container-service-container-logs"
+                  target="_blank"
+                  >Viewing the container logs of your Amazon Lightsail container
+                  services.<svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="content_entry">
+              <div class="style_headlineSM">
+                Monitor the utilization metrics of your container service
+              </div>
+              <div class="style_bodySM">
+                Monitor the metrics of your container service to diagnose issues
+                that may be a result of over-utilization. You can also monitor
+                metrics to help you determine if your service is
+                under-provisioned or over-provisioned. For more information, see
+                <a
+                  href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-container-services-metrics"
+                  target="_blank"
+                  >Viewing container service metrics in Amazon Lightsail.<svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 -2 16 16"
+                    data-name="icon_inline_extlink_body2"
+                    class="tw_primitive_icon2 tw_type_mod_navlink"
+                    svgid="icon_inline_extlink_body2"
+                  >
+                    <rect
+                      data-name="bounds"
+                      width="16"
+                      height="16"
+                      rx="2"
+                      style="opacity: 0;"
+                    ></rect>
+                    <g data-name="glyph">
+                      <path
+                        data-name="glyph"
+                        d="M4.107,14A3.107,3.107,0,0,1,1,10.893V6.568A3.107,3.107,0,0,1,4.107,3.461h.25A.643.643,0,0,1,5,4.1v.429a.642.642,0,0,1-.643.642h-.25A1.393,1.393,0,0,0,2.714,6.568v4.325a1.393,1.393,0,0,0,1.393,1.393H8.5a1.393,1.393,0,0,0,1.393-1.393V10.6a.643.643,0,0,1,.643-.643h.428a.643.643,0,0,1,.643.643v.289A3.107,3.107,0,0,1,8.5,14Z"
+                        style="opacity: 0.9;"
+                      ></path>
+                      <path
+                        data-name="glyph"
+                        d="M6.643,2.961A.643.643,0,0,0,6,3.6v.428a.643.643,0,0,0,.643.643H9.074l-3.5,3.5a.643.643,0,0,0,0,.909l.3.3a.643.643,0,0,0,.909,0l3.5-3.5v2.43a.643.643,0,0,0,.643.643h.428A.643.643,0,0,0,12,8.318V2.961Z"
+                      ></path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!--><!-->
+          </div>
+        </div>
+      </div>
+      <div class="layout_footer style_bodySM style_secondary">
+        © 2020, Amazon Web Services, Inc. or its affiliates. All rights
+        reserved.
+      </div>
+    </div>
+  </body>
+</html>
