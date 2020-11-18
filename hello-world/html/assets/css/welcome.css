@@ -1,176 +1,304 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 @font-face {
-	font-family: 'FontCopy';
-	font-style: normal;
-	src: url("../fonts/AmazonEmber_W_Rg.woff2") format("woff2"), url("../fonts/AmazonEmber_W_Rg.woff") format("woff"), url("../fonts/AmazonEmber_W_Rg.eot") format("embedded-opentype");
+  font-family: "FontCopy";
+  font-style: normal;
+  src: url("../fonts/AmazonEmber_W_Rg.woff2") format("woff2"),
+    url("../fonts/AmazonEmber_W_Rg.woff") format("woff"),
+    url("../fonts/AmazonEmber_W_Rg.eot") format("embedded-opentype");
 }
 @font-face {
-	font-family: 'FontCopy';
-	font-weight: bold;
-	src: url("../fonts/AmazonEmber_W_Bd.woff2") format("woff2"), url("../fonts/AmazonEmber_W_Bd.woff") format("woff"), url("../fonts/AmazonEmber_W_Bd.eot") format("embedded-opentype");
+  font-family: "FontCopy";
+  font-weight: bold;
+  src: url("../fonts/AmazonEmber_W_Bd.woff2") format("woff2"),
+    url("../fonts/AmazonEmber_W_Bd.woff") format("woff"),
+    url("../fonts/AmazonEmber_W_Bd.eot") format("embedded-opentype");
 }
 @font-face {
-	font-family: 'FontDisplay';
-	font-style: normal;
-	src: url("../fonts/AmazonEmberDisplay_W_Lt.woff2") format("woff2"), url("../fonts/AmazonEmberDisplay_W_Lt.woff") format("woff"), url("../fonts/AmazonEmberDisplay_W_Lt.eot") format("embedded-opentype");
+  font-family: "FontDisplay";
+  font-style: normal;
+  src: url("../fonts/AmazonEmberDisplay_W_Lt.woff2") format("woff2"),
+    url("../fonts/AmazonEmberDisplay_W_Lt.woff") format("woff"),
+    url("../fonts/AmazonEmberDisplay_W_Lt.eot") format("embedded-opentype");
 }
 
-
-body, html {
-	background-color: #FFFFFF;
-	font-family: FontCopy;
-	margin: 0px;
-	padding: 0px;
-	-moz-osx-font-smoothing: grayscale;
-		color: #4A4A4A;
-		width: 100%;
-		min-height: 100vh;
+body,
+html {
+  background-color: #ffffff;
+  font-family: FontCopy;
+  margin: 0px;
+  padding: 0px;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4a4a4a;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 strong {
-	font-family: FontCopy;
+  font-family: FontCopy;
 }
 
 a {
-	text-decoration: none;
-  fill: #0073BB;
-  color: #0073BB;
+  text-decoration: none;
+  fill: #0073bb;
+  color: #0073bb;
 }
 
 .style_rule {
-	margin: 4px 0 4px 0;
-	border-top: 1px dashed #9B9B9B;
-	width: 100%;
+  margin: 4px 0 4px 0;
+  border-top: 1px dashed #9b9b9b;
+  width: 100%;
 }
 
 .style_link {
-	display: flex;
-	line-height: 20px;
-	fill: #0073BB;
-	color: #0073BB;
-	margin-top: 8px;
+  display: flex;
+  line-height: 20px;
+  fill: #0073bb;
+  color: #0073bb;
+  margin-top: 8px;
 }
 
 .style_link .label {
-	font-size: 14px;
-	line-height: 16px;
-		text-decoration: none;
-	font-style: normal;
-	padding-right: 2px;
-
-
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  font-style: normal;
+  padding-right: 2px;
 }
 
 .style_headlineXL {
-	line-height: 44px;
-	font-size: 36px;
-	font-family: FontDisplay;
-	color: #DD6B10;
+  line-height: 44px;
+  font-size: 36px;
+  font-family: FontDisplay;
+  color: #dd6b10;
 }
 
 .style_headlineMD {
-	    line-height: 36px;
-    font-size: 28px;
-    font-family: FontDisplay;
-    color: #4A4A4A;
-    padding-bottom: 16px;
-	color: #DD6B10;
+  line-height: 36px;
+  font-size: 28px;
+  font-family: FontDisplay;
+  color: #4a4a4a;
+  padding-bottom: 16px;
+  color: #dd6b10;
 }
 
 .style_headlineSM {
-line-height: 22px;
-font-size: 20px;
-font-family: FontDisplay;
-padding-bottom: 8px;
+  line-height: 22px;
+  font-size: 20px;
+  font-family: FontDisplay;
+  padding-bottom: 8px;
 }
 
 .style_bodyMD {
-	font-size: 18px;
-	padding-bottom: 18px;
+  font-size: 18px;
+  padding-bottom: 18px;
+  line-height: 22px;
 }
 
 .style_bodySM {
-	font-size: 14px;
-	line-height: 16px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .style_secondary {
-	color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 .layout_page {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 960px;
-	margin: 0px auto;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 960px;
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  margin: 0px auto;
+  align-items: center;
 }
 
 .layout_content {
-		flex: 1;
-		width: 640px;
-		margin-top: -60px;
-		z-index: 900;
+  flex: 1;
+  max-width: 640px;
+  width: 100%;
+  margin-top: -60px;
+  z-index: 900;
 }
 
 .layout_section1 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-
 .layout_footer {
-	text-align: right;
-	padding: 8px;
+  text-align: center;
+  padding: 8px;
 }
 
 .layout_header {
-	position: relative;
-	width: 960px;
-	height: 384px;
+  position: relative;
+  width: 960px;
+  height: 384px;
 }
 
 .layout_paragraph {
-	max-width: 480px;
-	padding-bottom: 16px;
+  max-width: 480px;
+  padding-bottom: 16px;
 }
 
-
 .layout_section2 {
-	display: flex;
+  display: flex;
   flex-direction: column;
-	width: 100%;
+  width: 100%;
 }
 
 .layout_column {
-	flex: 1;
+  flex: 1;
 }
 
 .layout_section2_head {
-	padding-top: 8px;
+  padding-top: 8px;
 }
 
 .content_entry {
-	padding-bottom: 24px;
-	padding-right: 24px;
+  padding-bottom: 24px;
+  padding-right: 24px;
 }
 
-
-
-.img_background{
-	position: absolute;
-	width: 150px;
-	height: 150px;
-	right: 40.8%;
-	top: 16.2%;
-
+.img_background {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 40.8%;
+  top: 16.2%;
 }
 
 .img_foreground {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

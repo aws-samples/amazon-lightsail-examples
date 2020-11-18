@@ -13,39 +13,39 @@
     <link rel="stylesheet" type="text/css" href="assets/css/welcome.css" />
   </head>
   <body>
-    <div class="layout_page style_bodyMD">
-      <div class="layout_header">
+    <main class="layout_page style_bodyMD">
+      <header class="layout_header">
         <img src="assets/img/Wave.gif" class="img_background" />
         <img src="assets/img/HeaderOverlay.svg" class="img_foreground" />
-      </div>
+      </header>
       <div class="layout_content">
-        <div class="layout_section1">
-          <div class="style_headlineXL">Success!</div>
+        <section class="layout_section1">
+          <h1 class="style_headlineXL">Success!</h1>
 
-          <div class="layout_paragraph style_bodyMD">
+          <h2 class="layout_paragraph style_bodyMD">
             Congratulations! You just deployed the Amazon Lightsail example
             container image.
-          </div>
+          </h2>
 
-          <div class="layout_paragraph style_bodyMD">
+          <h2 class="layout_paragraph style_bodyMD">
             The purpose of this image is to quickly deploy a container to your
             Lightsail container service.
-          </div>
+          </h2>
 
           <div class="style_rule"></div>
-        </div>
+        </section>
 
-        <div class="layout_section2_head">
-          <div class="style_headlineMD">What now?</div>
-        </div>
+        <section class="layout_section2">
+          <h3 class="layout_section2_head">
+            <div class="style_headlineMD">What now?</div>
+          </h3>
 
-        <div class="layout_section2">
-          <div class="layout_column">
-            <div class="content_entry">
-              <div class="style_headlineSM">
+          <ul class="layout_column">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 Learn about Lightsail container services
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 An Amazon Lightsail container service is a highly scalable
                 compute and networking resource on which you can deploy, run,
                 and manage containers. For more information, see
@@ -82,12 +82,12 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">Install required software</div>
-              <div class="style_bodySM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">Install required software</h4>
+              <p class="style_bodySM">
                 Install software on your local machine that you need to create
                 your own container images for your Lightsail container service.
                 For more information, see
@@ -124,14 +124,14 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 Create your own container images
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 Create a container image on your local machine using a
                 Dockerfile. After your image is created, you can push it to your
                 Lightsail container service to deploy it. For more information,
@@ -170,14 +170,14 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 Push container images to your container service
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 Push container images from your local machine to your Lightsail
                 container service so that you can launch them. For more
                 information, see
@@ -214,14 +214,14 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 Create a deployment on your container service
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 Create a deployment to launch containers on your Lightsail
                 container service. You can use container images that you pushed
                 to your service, or use container images from a public
@@ -259,14 +259,14 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 View container logs from your deployment
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 Every container in your container service generates a log that
                 you can access to diagnose the operation of your containers. For
                 more information, see
@@ -303,14 +303,14 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
+              </p>
+            </li>
 
-            <div class="content_entry">
-              <div class="style_headlineSM">
+            <li class="content_entry">
+              <h4 class="style_headlineSM">
                 Monitor the utilization metrics of your container service
-              </div>
-              <div class="style_bodySM">
+              </h4>
+              <p class="style_bodySM">
                 Monitor the metrics of your container service to diagnose issues
                 that may be a result of over-utilization. You can also monitor
                 metrics to help you determine if your service is
@@ -347,17 +347,15 @@
                     </g>
                   </svg>
                 </a>
-              </div>
-            </div>
-
-            <!--><!-->
-          </div>
-        </div>
+              </p>
+            </li>
+          </ul>
+        </section>
       </div>
-      <div class="layout_footer style_bodySM style_secondary">
+      <footer class="layout_footer style_bodySM style_secondary">
         © 2020, Amazon Web Services, Inc. or its affiliates. All rights
         reserved.
-      </div>
-    </div>
+      </footer>
+    </main>
   </body>
 </html>
