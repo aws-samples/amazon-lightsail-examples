@@ -24,8 +24,7 @@ body, html {
 	-moz-osx-font-smoothing: grayscale;
 		color: #4A4A4A;
 		width: 100%;
-		height: 100%;
-
+		min-height: 100vh;
 }
 
 strong {
@@ -34,6 +33,8 @@ strong {
 
 a {
 	text-decoration: none;
+  fill: #0073BB;
+  color: #0073BB;
 }
 
 .style_rule {
@@ -140,6 +141,7 @@ padding-bottom: 8px;
 
 .layout_section2 {
 	display: flex;
+  flex-direction: column;
 	width: 100%;
 }
 
