@@ -1,4 +1,4 @@
-FROM amazonlinux
+FROM amazonlinux:2
 
 RUN yum install -y httpd-2.4.46-1.amzn2
 
