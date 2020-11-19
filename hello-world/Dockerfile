@@ -8,6 +8,4 @@ COPY html /var/www/html
 
 EXPOSE 80
 
-STOPSIGNAL SIGTERM
-
 CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
