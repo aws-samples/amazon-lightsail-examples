@@ -1,6 +1,6 @@
 # amazon-lightsail-examples
 
-This repository contains examples of Lightsail instance launch scripts to speed up the deployment and configuration of instances
+This repository contains example Docker images to be used on Lightsail Containers. Right now, it just has one hello-world example that runs a simple webserver.
 
 ## Security
 
