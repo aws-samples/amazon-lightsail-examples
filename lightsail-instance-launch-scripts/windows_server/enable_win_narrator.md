@@ -1,6 +1,6 @@
 # About enable win narrator script
 
-The code in [enable_win_narrator.bat](lightsail-instance-launch-scripts/windows_server/enable_win_narrator.bat) can be used to enable the narrator accessibility feature for visually impaired, so that it always runs on logon.
+The code in [enable_win_narrator.bat](./enable_win_narrator.bat) can be used to enable the narrator accessibility feature for visually impaired, so that it always runs on logon.
 
 This is based on [a request in re:Post](https://repost.aws/questions/QUjkaxc6x0QHqzdwr6RxxRWQ/server-accessibility-for-a-visually-impaired#ANs3zh89yiR7S4RRZPNVh14g)
 
