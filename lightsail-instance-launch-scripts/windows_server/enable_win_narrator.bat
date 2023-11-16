@@ -6,4 +6,5 @@
     #start narrator
     narrator
 </script>
+#To run the user data scripts every time you reboot or start the instance
 <persist>true</persist>
