@@ -94,13 +94,13 @@ sudo ln -sf /etc/letsencrypt/live/#LECertName#/fullchain.pem /opt/bitnami/apache
 
 
 # Download and execute HTTPS rewrite script.
-sudo curl -o /opt/bitnami/lightsail/https_rewrite.py #HttpsRewriteScriptGithubURL# \
-&& sudo python3 /opt/bitnami/lightsail/https_rewrite.py #LECertName# \
+sudo curl -o /opt/bitnami/lightsail/website-setup-https-rewrite.py #HttpsRewriteScriptGithubURL# \
+&& sudo python3 /opt/bitnami/lightsail/website-setup-https-rewrite.py #LECertName# \
 && echo Lightsail Website Setup: HTTP to HTTPS redirect has been successfully configured.
 
 
 # Download and execute Let's Encrypt renewal script.
-sudo curl -o /opt/bitnami/lightsail/le_cert_renewal.py #LERenewalScriptGithubURL# \
-&& if [ $(sudo grep -c "le_cert_renewal.py"  /etc/crontab) -eq 0 ]; then echo "0 0,12 * * * root /usr/bin/python3 /opt/bitnami/lightsail/le_cert_renewal.py" | sudo tee -a /etc/crontab > /dev/null; \
+sudo curl -o /opt/bitnami/lightsail/website-setup-le-cert-renewal.py #LERenewalScriptGithubURL# \
+&& if [ $(sudo grep -c "website-setup-le-cert-renewal.py"  /etc/crontab) -eq 0 ]; then echo "0 0,12 * * * root /usr/bin/python3 /opt/bitnami/lightsail/website-setup-le-cert-renewal.py" | sudo tee -a /etc/crontab > /dev/null; \
 echo Lightsail Website Setup: Set up LE auto renewal service.; \
 else echo Lightsail Website Setup: LE auto renewal service already setup - skipping.;

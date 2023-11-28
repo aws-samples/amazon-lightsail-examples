@@ -1,7 +1,7 @@
 # This file contains the pip versions & checksum values to securely install certbot & its dependencies.
 # Certbot is the Let's Encrypt client to generate SSL certificate.
 # This file is required as part of the Lightsail Website Setup installation.
-# It can be removed after installation by running: sudo rm /opt/bitnami/lightsail/requirements.txt
+# It can be removed after installation by running: sudo rm /opt/bitnami/lightsail/website-setup-requirements.txt
 
 certbot == 2.7.1 \
   --hash=sha256:113a4aabbe946c3677cb2af867279d19a3f07aaff0ebd4683cc9768be14cc077

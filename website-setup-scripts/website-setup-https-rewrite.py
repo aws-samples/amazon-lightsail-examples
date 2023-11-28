@@ -1,6 +1,6 @@
 # This file defines the Apache rewrite rules for configuring HTTP to HTTPS redirect on the target instance.
 # It is needed as part of the Lightsail Website Setup for setting up a secure WordPress website.
-# This file can be safely removed after Lightsail Website Setup is completed by running: sudo rm /opt/bitnami/lightsail/https_rewrite.py
+# This file can be safely removed after Lightsail Website Setup is completed by running: sudo rm /opt/bitnami/lightsail/website-setup-https-rewrite.py
 
 # To disable HTTP to HTTPS rewrite, run the following commands in a SSH session:
 # sudo cp /opt/bitnami/lightsail/wp-config.php.backup /opt/bitnami/wordpress/wp-config.php
@@ -8,7 +8,7 @@
 # sudo /opt/bitnami/ctlscript.sh restart
 
 # To enable HTTP to HTTPS rewrite, run the following commands in a SSH session:
-# sudo python3 /opt/bitnami/lightsail/https_rewrite.py WebsiteSetupLECert
+# sudo python3 /opt/bitnami/lightsail/website-setup-https-rewrite.py WebsiteSetupLECert
 
 import logging
 import os
@@ -136,7 +136,7 @@ def modify_vhost_conf(file_path, domain_list):
 
 def main():
     if len(argv) == 1:
-        print("usage: sudo <python/python3> https_rewrite.py <target_cert_name>")
+        print("usage: sudo <python/python3> website-setup-https-rewrite.py <target_cert_name>")
         print("Expecting certificate name as the input parameter.  Exit.")
         return 1
 

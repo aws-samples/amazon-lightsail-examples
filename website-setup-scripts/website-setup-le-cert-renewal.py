@@ -1,9 +1,9 @@
 # This file defines the logic needed to handle renewing the Let's Encrypt (LE) SSL certificate installed by Lightsail Website Setup.
-# This file is executed by the following crontab entry: 0 0,12 * * * root /usr/bin/python3 /home/bitnami/lightsail/le_cert_renewal.py
+# This file is executed by the following crontab entry: 0 0,12 * * * root /usr/bin/python3 /home/bitnami/lightsail/website-setup-le-cert-renewal.py
 # It checks the existing valid LE certificate expiration date. If eligible for renewal, it will call certbot to renew the certificate.
 # This file should not be removed, even after Lightsail Website Setup completes, to ensure the renewal process succeeds.
 # If the LE certificate is no longer needed and therefore does not need to be removed, this file can be removed.
-# To remove this file, run: sudo rm /opt/bitnami/lightsail/le_cert_renewal.py
+# To remove this file, run: sudo rm /opt/bitnami/lightsail/website-setup-le-cert-renewal.py
 
 import logging
 import time
@@ -70,7 +70,7 @@ def main():
     verbose_log_init()
 
     if len(argv) == 1:
-        log_info("usage: sudo <python/python3> cert_renew.py <target_cert_name>")
+        log_info("usage: sudo <python/python3> website-setup-le-cert-renewal.py <target_cert_name>")
         log_info("Expecting certificate name as the input parameter.  Exit.")
         return
 
