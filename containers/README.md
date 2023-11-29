@@ -4,7 +4,7 @@ This repository contains example Docker images to be used on Lightsail Container
 
 ## Security
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+See [CONTRIBUTING](../CONTRIBUTING.md#security-issue-notifications) for more information.
 
 ## License
 
