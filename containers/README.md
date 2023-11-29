@@ -1,6 +1,6 @@
-# amazon-lightsail-examples
-
-This repository contains example Docker images to be used on Lightsail Containers. Right now, it just has one hello-world example that runs a simple webserver.
+This directory contains example Docker images to be used on Lightsail
+Containers. Right now, it just has `hello-world` example that runs a simple
+web server.
 
 ## Security
 
@@ -8,5 +8,4 @@ See [CONTRIBUTING](../CONTRIBUTING.md#security-issue-notifications) for more inf
 
 ## License
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
-
+This library is licensed under the MIT-0 License. See the [LICENSE](../LICENSE) file.
