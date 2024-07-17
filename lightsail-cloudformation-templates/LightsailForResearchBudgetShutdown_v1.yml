@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Shuts down a Lightsail for Research instance when a budget threshold is exceeded
+Description: Shuts down a Lightsail for Research virtual computer when a budget threshold is exceeded
 
 Parameters:
   LightsailInstanceName:
@@ -160,4 +160,3 @@ Outputs:
   BudgetAlarmTopicArn:
     Description: ARN of the SNS topic for budget alarms
     Value: !Ref BudgetAlarmTopic
-    
