@@ -1,0 +1,162 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Shuts down a Lightsail for Research virtual computer when a budget threshold is exceeded
+
+Parameters:
+  LightsailInstanceName:
+    Type: String
+    Description: Name of the Lightsail for Research virtual computer to shut down
+
+  LightsailRegion:
+    Type: String
+    Description: AWS region where the Lightsail for Research virtual computer is located
+    Default: us-east-2
+
+  BudgetTimePeriod:
+    Type: String
+    Description: Budget time period
+    Default: MONTHLY
+    AllowedValues:
+      - DAILY
+      - MONTHLY
+      - QUARTERLY
+      - ANNUALLY
+
+  BudgetThreshold:
+    Type: Number
+    Description: Budget threshold in USD for stopping virtual computer
+    Default: 250
+
+  BudgetNotificationEmail:
+    Type: String
+    Description: Email address to receive budget notification
+    Default: your.email@example.com
+
+
+Resources:
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: LightsailShutdownPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lightsail:StopInstance
+                Resource: '*'
+
+  ShutdownLightsailFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: ShutdownLightsailInstance
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.12
+      Timeout: 10
+      MemorySize: 128
+      Environment:
+        Variables:
+          LIGHTSAIL_INSTANCE_NAME: !Ref LightsailInstanceName
+          LIGHTSAIL_REGION: !Ref LightsailRegion
+      Code:
+        ZipFile: |
+          import boto3
+          import os
+          import json
+          def lambda_handler(event, context):
+              instance_name = os.environ['LIGHTSAIL_INSTANCE_NAME']
+              region = os.environ['LIGHTSAIL_REGION']
+              lightsail = boto3.client('lightsail', region_name=region)
+              try:
+                  response = lightsail.stop_instance(instanceName=instance_name)
+                  print(f"Successfully initiated shutdown for instance: {instance_name} in region: {region}")
+                  return {
+                      'statusCode': 200,
+                      'body': f"Shutdown initiated for instance: {instance_name} in region: {region}"
+                  }
+              except Exception as e:
+                  print(f"Error shutting down instance: {str(e)}")
+                  return {
+                      'statusCode': 500,
+                      'body': f"Error shutting down instance: {str(e)}"
+                  }
+
+  LightsailBudget:
+    Type: AWS::Budgets::Budget
+    Properties:
+      Budget:
+        BudgetName: LightsailBudget
+        BudgetType: COST
+        TimeUnit: !Ref BudgetTimePeriod
+        BudgetLimit:
+          Amount: !Ref BudgetThreshold
+          Unit: USD
+        CostFilters:
+          Service:
+            - Amazon Lightsail
+      NotificationsWithSubscribers:
+        - Notification:
+            NotificationType: ACTUAL
+            ComparisonOperator: GREATER_THAN
+            Threshold: 100
+          Subscribers:
+            - SubscriptionType: SNS
+              Address: !Ref BudgetAlarmTopic
+            - SubscriptionType: EMAIL
+              Address: !Ref BudgetNotificationEmail
+
+  BudgetAlarmTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: LightsailBudgetAlarm
+
+  BudgetAlarmTopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowBudgetsPublish
+            Effect: Allow
+            Principal:
+              Service: budgets.amazonaws.com
+            Action: sns:Publish
+            Resource: !Ref BudgetAlarmTopic
+      Topics:
+        - !Ref BudgetAlarmTopic
+
+  LambdaSNSPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ShutdownLightsailFunction
+      Action: lambda:InvokeFunction
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref BudgetAlarmTopic
+
+  SNSTopicSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref BudgetAlarmTopic
+      Protocol: lambda
+      Endpoint: !GetAtt ShutdownLightsailFunction.Arn
+
+Outputs:
+  LambdaFunctionArn:
+    Description: ARN of the created Lambda function
+    Value: !GetAtt ShutdownLightsailFunction.Arn
+  BudgetName:
+    Description: Name of the created Lightsail budget
+    Value: LightsailBudget
+  BudgetAlarmTopicArn:
+    Description: ARN of the SNS topic for budget alarms
+    Value: !Ref BudgetAlarmTopic
