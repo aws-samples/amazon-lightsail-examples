@@ -1,14 +1,14 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Shuts down a Lightsail instance when a budget threshold is exceeded
+Description: Shuts down a Lightsail for Research instance when a budget threshold is exceeded
 
 Parameters:
   LightsailInstanceName:
     Type: String
-    Description: Name of the Lightsail virtual computer to shut down
+    Description: Name of the Lightsail for Research virtual computer to shut down
 
   LightsailRegion:
     Type: String
-    Description: AWS region where the Lightsail instance is located
+    Description: AWS region where the Lightsail for Research virtual computer is located
     Default: us-east-2
 
   BudgetTimePeriod:
@@ -160,3 +160,4 @@ Outputs:
   BudgetAlarmTopicArn:
     Description: ARN of the SNS topic for budget alarms
     Value: !Ref BudgetAlarmTopic
+    
